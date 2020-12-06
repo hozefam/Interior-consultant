@@ -64,42 +64,51 @@
         </svg>
       </div>
       <ul class="hidden md:flex md:flex-row md:space-x-6" id="mobileMenu">
-        <li class="pr-5 text-lg font-montserrat"><a> Home </a></li>
-        <li class="pr-5 text-lg font-montserrat"><a> Collection </a></li>
-        <li class="pr-5 text-lg font-montserrat"><a> About </a></li>
-        <li class="pr-5 text-lg font-montserrat"><a> Contact </a></li>
+        <li class="pr-5 text-lg font-montserrat font-extrabold">
+          <a> Home </a>
+        </li>
+        <li class="pr-5 text-lg font-montserrat font-bold">
+          <a> Collection </a>
+        </li>
+        <li class="pr-5 text-lg font-montserrat font-bold"><a> About </a></li>
+        <li class="pr-5 text-lg font-montserrat font-bold"><a> Contact </a></li>
       </ul>
     </header>
 
-    <section id="content" class="flex-1 flex flex-col space-y-10 pt-10">
-      <div class="text text-5xl font-lora font-normal">Modern interior</div>
-      <div class="w-2/3 text text-xl font-montserrat font-light">
-        A full-Service residential & commercial interior design and staging
-        company offering professional organizing & eco-services
+    <section
+      id="content"
+      class="flex-1 flex flex-col md:flex-row space-y-10 pt-10 md:pt-32"
+    >
+      <div class="flex-1 flex flex-col space-y-10 md:pt-8">
+        <div class="text text-5xl font-lora font-normal">Modern interior</div>
+        <div class="w-2/3 text text-xl font-montserrat font-light">
+          A full-Service residential & commercial interior design and staging
+          company offering professional organizing & eco-services
+        </div>
+        <div class="flex space-x-2">
+          <span class="text text-xl font-semibold font-montserrat"
+            >Read more</span
+          >
+          <svg
+            class="h-6 w-6 cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </div>
       </div>
-      <div class="flex space-x-2">
-        <span class="text text-xl font-semibold font-montserrat"
-          >Read more</span
-        >
-        <svg
-          class="h-6 w-6 cursor-pointer"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"
-          />
-        </svg>
-      </div>
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex flex-1 flex-col justify-center items-center">
         <img class="w-full h-full" src="./assets/photo1.png" alt="" />
         <div
-          class="flex flex-col justify-center items-start py-8 px-12 space-y-6 bg-black transform translate-x-4 -translate-y-28 block"
+          class="flex flex-col justify-center items-start py-8 px-12 space-y-6 bg-black transform translate-x-4 md:translate-x-28 -translate-y-28 block"
         >
           <div class="flex flex-row space-x-6">
             <img
@@ -127,9 +136,11 @@
     </section>
 
     <footer id="footer" class="flex justify-center items-center">
-      <span class="border-t flex justify-center p-4">
+      <span
+        class="border-t flex justify-center items-center p-4 md:border-black"
+      >
         <div
-          class="text flex-shrink font-montserrat text-lg font-semibold text-gray-300"
+          class="text flex-shrink-0 font-montserrat text-lg font-semibold text-gray-300"
         >
           Hozefa Mangalorewala @ DevChallenges.io
         </div>
@@ -146,16 +157,17 @@
 
       hamburger.addEventListener('click', function () {
         mobileMenu.classList.toggle('active');
-        // header.style.display = 'none';
+        console.log(header.style.display);
+        header.style.display = 'none';
         content.style.display = 'none';
         footer.style.display = 'none';
       });
 
       closebtn.addEventListener('click', function () {
         mobileMenu.classList.toggle('active');
-        // header.style.display = 'block';
-        content.style.display = 'block';
-        footer.style.display = 'block';
+        header.style.display = '';
+        content.style.display = '';
+        footer.style.display = '';
       });
     </script>
   </body>
